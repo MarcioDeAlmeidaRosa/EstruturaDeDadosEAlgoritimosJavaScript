@@ -1,0 +1,9 @@
+{
+  "name": "fila-prioridade",
+  "version": "0.0.0",
+  "description": "FilaPrioridade",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
