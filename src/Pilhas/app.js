@@ -24,4 +24,3 @@ console.log(stack.pop());
 console.log(stack.pop());
 console.log(stack.size());
 stack.print();
-console.log(stack);

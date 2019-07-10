@@ -1,0 +1,9 @@
+{
+  "name": "fila",
+  "version": "0.0.0",
+  "description": "Fila",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
