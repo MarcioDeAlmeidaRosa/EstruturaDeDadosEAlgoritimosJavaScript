@@ -1,0 +1,9 @@
+{
+  "name": "pilhas",
+  "version": "0.0.0",
+  "description": "Pilhas",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
