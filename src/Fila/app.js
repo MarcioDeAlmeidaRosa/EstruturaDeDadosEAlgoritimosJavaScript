@@ -6,9 +6,9 @@ let queue = new Queue();
 console.log('Validando se a fila esta vazia');
 console.log(queue.isEmpty());
 
-queue.queue('John');
-queue.queue('Jack');
-queue.queue('Camila');
+queue.enqueue('John');
+queue.enqueue('Jack');
+queue.enqueue('Camila');
 
 queue.print();
 console.log(queue.size());

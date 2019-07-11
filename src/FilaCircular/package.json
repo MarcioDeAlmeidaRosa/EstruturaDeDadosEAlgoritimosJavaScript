@@ -1,0 +1,9 @@
+{
+  "name": "fila-circular",
+  "version": "0.0.0",
+  "description": "FilaCircular",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
