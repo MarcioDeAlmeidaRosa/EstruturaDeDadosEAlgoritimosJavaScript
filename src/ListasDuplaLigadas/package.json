@@ -1,0 +1,9 @@
+{
+  "name": "listas-dupla-ligadas",
+  "version": "0.0.0",
+  "description": "ListasDuplaLigadas",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}

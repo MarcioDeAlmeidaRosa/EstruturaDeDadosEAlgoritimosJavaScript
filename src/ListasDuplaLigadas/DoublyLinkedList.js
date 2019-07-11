@@ -1,13 +1,14 @@
-module.exports = function LinkedList() {
+module.exports = function DoublyLinkedList() {
 
     let Node = function (element) {
         this.element = element;
         this.next = null;
+        this.prev = null;
     };
 
     let length = 0;
-
     let head = null;
+    let tail = null;
 
     /**
      * Adiciona um novo item ao final da lista.
@@ -28,6 +29,7 @@ module.exports = function LinkedList() {
             }
             //obtém o último item e faz next receber node para fazer a ligação
             current.next = node;
+            node.prev = current;
         }
         //Atualiza o tamanho da lista
         length++;
@@ -47,8 +49,19 @@ module.exports = function LinkedList() {
             let previous = null;
             let index = 0;
             if (position === 0) {
-                node.next = current;
-                head = node;
+                if (!head) {
+                    head = node;
+                    tail = node;
+                } else {
+                    node.next = current;
+                    current.prev = node;
+                    head = node;
+                }
+            } else if (position === length) {
+                current = tail;
+                current.next = node;
+                node.prev = current;
+                tail = node;
             } else {
                 while (index++ < position) {
                     previous = current;
@@ -56,6 +69,8 @@ module.exports = function LinkedList() {
                 }
                 node.next = current;
                 previous.next = node;
+                current.prev = node;
+                node.prev = previous;
             }
             length++;
             return true;
@@ -78,6 +93,16 @@ module.exports = function LinkedList() {
             //remover o primeiro elemento
             if (position === 0) {
                 head = current.next;
+                //se houver apensa um item, atualiza o tail
+                if (length === 1) {
+                    tail = null;
+                } else {
+                    head.prev = null;
+                }
+            } else if (position === length) {
+                current = tail;
+                tail = current.next;
+                tail.next = null;
             } else {
                 while (index++ < position) {
                     previous = current;
@@ -86,6 +111,7 @@ module.exports = function LinkedList() {
                 //faz a ligação de previous com o next de current: pula esse elemento
                 //para removê-lo
                 previous.next = current.next;
+                current.next.prev = previous;
             }
             //atualiza o contador de registro
             length--;
@@ -170,5 +196,13 @@ module.exports = function LinkedList() {
      * */
     this.getHead = function () {
         return head;
+    };
+
+    /**
+     * Retorna o útimo registro
+     * @return {any} - Retorna o útimo registro
+     * */
+    this.getTail = function () {
+        return tail;
     };
 };
