@@ -1,0 +1,9 @@
+{
+  "name": "listas-ligadas",
+  "version": "0.0.0",
+  "description": "ListasLigadas",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
